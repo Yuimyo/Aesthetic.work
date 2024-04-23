@@ -16,8 +16,11 @@ export const links: LinksFunction = () => [
 
 export default function Index() {
   return (
-    <div className="hoge">
-      <h1>Velcome</h1>
+    <div>
+      <div className="window">
+        <div className="expo-dark">
+        </div>
+      </div>
     </div>
   );
 }
