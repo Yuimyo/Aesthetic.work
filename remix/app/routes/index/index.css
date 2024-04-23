@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+}
+
+.hoge {
+  background-color: rgb(50, 16, 131);
+}
+
+/*# sourceMappingURL=index.css.map */
