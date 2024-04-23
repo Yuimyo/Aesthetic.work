@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    color: white;
+}
+
+.window {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #212121;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    box-shadow: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+
+    background-color: #212121;
+}
+
+label {
+    // margin-bottom: 4px;
+
+    // vertical-align: middle;
+    // display: inline-block;
+}
+
+input {
+    background-color: red;
+
+    &:disabled {
+        background-color: darken(red, 20%);
+    }
+}
+
+form {
+    display: block;
+}
+
+button {
+    $col-btn: #212121;
+    $col-focusing: rgba(100, 169, 190, 0.75);
+    $col-shadow: rgba(0, 0, 0, 0.3);
+    $text-padding: 10px;
+    $range-push: 2px;
+    $shadow-len: 2px;
+
+    cursor: pointer;
+    padding: $text-padding;
+    border-radius: 10px;
+    border: 0px solid transparent;
+    margin: $range-push 0px $range-push 0px;
+
+    font-size: 1rem;
+
+    background-color: $col-btn;
+    color: white;
+    box-shadow: 0px calc(1px + $range-push) $shadow-len $shadow-len $col-shadow;
+
+    outline: 1px dashed transparent;
+    outline-offset: -2px;
+
+    transition: background-color 0.05s,
+        outline 0.3s;
+
+    &:hover {
+        background-color: lighten($col-btn, 5%);
+    }
+
+    &:active {
+        transform: translateY($range-push);
+        box-shadow: 0px 1px $shadow-len $shadow-len $col-shadow;
+    }
+
+    &:focus {
+        outline: 1px dashed $col-focusing;
+    }
+}
+
+.stk {
+    $area-width: 100px;
+    $area-height: 40px;
+    $area-width-pad: 4px;
+    $area-col-main: rgb(141, 193, 170);
+    $scroll-height: 8px;
+    $scroll-border: 2px;
+
+    border-radius: 4px;
+    margin: 2px;
+
+    width: $area-width;
+    height: $area-height;
+    position: relative;
+
+    background-color: $area-col-main;
+
+    .stk-inside {
+        height: 100%;
+        padding: 0px $area-width-pad 0px $area-width-pad;
+
+        font-size: 14px;
+        border-radius: 4px;
+
+        overflow-x: scroll;
+        overflow-y: hidden;
+        text-align: center;
+
+        background-color: $area-col-main;
+        // background-color: blueviolet;
+
+        .stk-description {
+            font-size: 1em;
+
+            white-space: nowrap;
+            display: inline-block;
+            // background-color: red;
+            transform: translateY(calc(#{$area-height} * 0.5 - 1em + #{$scroll-height} * 0.5));
+            color: white;
+            text-shadow: 0px 0px 4px black,
+                0px 0px 2px black,
+                1px 1px 1px black;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0px;
+            height: $scroll-height;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 15px;
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: $scroll-height;
+            background-color: $area-col-main;
+            border-style: solid;
+            border-width: $scroll-border;
+            border-color: $area-col-main;
+            background-color: lighten($area-col-main, 20%);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: darken($area-col-main, 20%);
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            background-color: darken($area-col-main, 50%);
+        }
+    }
+
+    .stk-outside {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 2px;
+        transform: translateX(calc(100%));
+        // background-color: red;
+
+        .stk-lore {
+            display: flex;
+            align-items: center;
+
+            font-size: 12px;
+        }
+    }
+}
+
+.bracket {
+    $bracket-width: 20px;
+    $bracket-height: 40px;
+    $bracket-thickness: 2px;
+    $bracket-padding: 4px;
+    $bracket-color: rgb(200, 200, 200);
+
+    // background-color: darkblue; // test
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    $actual-bracket-width: calc(#{$bracket-width} - #{$bracket-padding} * 2);
+    $actual-bracket-height: calc(#{$bracket-height} - #{$bracket-padding} * 2);
+
+    .bracket-above {
+        position: relative;
+        width: $actual-bracket-width;
+        height: calc(#{$actual-bracket-height} * 0.5);
+        margin-top: $bracket-padding;
+        margin-left: $bracket-padding;
+        margin-right: $bracket-padding;
+
+        &::before,
+        &::after {
+            content: "";
+            width: calc(#{$actual-bracket-width} * 0.5 - #{$bracket-thickness} * 0.5);
+            height: calc(#{$actual-bracket-height} * 0.25 - #{$bracket-thickness} * 0.75);
+
+            position: absolute;
+
+            border-radius: 0px;
+            border-width: 0px;
+            border-style: solid;
+            border-color: $bracket-color;
+        }
+
+        &::before {
+            top: 0px;
+            left: 0px;
+            border-top-right-radius: 20px;
+            border-top-width: $bracket-thickness;
+            border-right-width: $bracket-thickness;
+            // border-color: rgba(192, 255, 242, 0.299);
+        }
+
+        &::after {
+            right: 0px;
+            bottom: calc(#{$bracket-thickness} * -0.5);
+            border-bottom-left-radius: 20px;
+            border-left-width: $bracket-thickness;
+            border-bottom-width: $bracket-thickness;
+            // border-color: rgba(255, 192, 203, 0.45);
+        }
+    }
+
+    .bracket-below {
+        position: relative;
+        width: $actual-bracket-width;
+        height: calc(#{$actual-bracket-height} * 0.5);
+        margin-bottom: $bracket-padding;
+        margin-left: $bracket-padding;
+        margin-right: $bracket-padding;
+
+        &::before,
+        &::after {
+            content: "";
+            width: calc(#{$actual-bracket-width} * 0.5 - #{$bracket-thickness} * 0.5);
+            height: calc(#{$actual-bracket-height} * 0.25 - #{$bracket-thickness} * 0.75);
+
+            position: absolute;
+
+            border-radius: 0px;
+            border-width: 0px;
+            border-style: solid;
+            border-color: $bracket-color;
+        }
+
+        &::before {
+            top: calc(#{$bracket-thickness} * -0.5);
+            right: 0px;
+            border-top-left-radius: 20px;
+            border-top-width: $bracket-thickness;
+            border-left-width: $bracket-thickness;
+            // border-color: rgba(192, 255, 242, 0.299);
+        }
+
+        &::after {
+            bottom: 0px;
+            left: 0px;
+            border-bottom-right-radius: 20px;
+            border-right-width: $bracket-thickness;
+            border-bottom-width: $bracket-thickness;
+            // border-color: rgba(255, 192, 203, 0.45);
+        }
+    }
+}
