@@ -67,6 +67,61 @@ button:focus {
   outline: 1px dashed rgba(100, 169, 190, 0.75);
 }
 
+textarea {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  background-color: black;
+  background-image: radial-gradient(#212121 30%, transparent 30%);
+  background-size: 4px 4px;
+  box-shadow: inset 0px 0px 20px 0px black, 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 4px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  outline: 1px dashed transparent;
+  outline-offset: -2px;
+  transition: outline 0.3s;
+}
+textarea::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+textarea::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background-color: transparent;
+}
+textarea::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #6e6e6e;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #949494;
+}
+textarea::-webkit-scrollbar-thumb:active {
+  background-color: #474747;
+}
+textarea:focus {
+  outline: 1px dashed rgba(100, 169, 190, 0.75);
+}
+
+.asm-form {
+  width: 200px;
+  height: 500px;
+  resize: vertical;
+  min-width: 100px;
+  max-width: 500px;
+  min-height: 100px;
+  max-height: 500px;
+  font-size: 15px;
+  margin: 5px;
+}
+
 .stk {
   border-radius: 4px;
   margin: 2px;
