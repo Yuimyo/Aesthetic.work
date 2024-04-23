@@ -285,4 +285,70 @@ textarea:focus {
   border-bottom-width: 2px;
 }
 
+.asm-viewer {
+  width: 300px;
+  padding: 4px;
+  border-radius: 4px;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgb(42, 42, 42);
+  box-shadow: inset 0px 0px 14px 0px black, 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid transparent;
+  outline: 1px dashed transparent;
+  outline-offset: -2px;
+  transition: outline 0.3s;
+}
+.asm-viewer::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+.asm-viewer::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background-color: transparent;
+}
+.asm-viewer::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.asm-viewer::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #6e6e6e;
+}
+.asm-viewer::-webkit-scrollbar-thumb:hover {
+  background-color: #949494;
+}
+.asm-viewer::-webkit-scrollbar-thumb:active {
+  background-color: #474747;
+}
+.asm-viewer:focus {
+  outline: 1px dashed rgba(100, 169, 190, 0.75);
+}
+.asm-viewer button {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  background: none;
+  background-color: transparent;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 0px transparent;
+  transition: background-color 0.1s;
+  display: block;
+  justify-content: auto;
+  align-items: auto;
+  text-align: initial;
+}
+.asm-viewer button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.asm-viewer button:active {
+  transform: translateY(0);
+  box-shadow: 0px 0px 0px 0px transparent;
+}
+.asm-viewer button:focus {
+  outline: 1px dashed rgba(100, 169, 190, 0.75);
+}
+
 /*# sourceMappingURL=index.css.map */

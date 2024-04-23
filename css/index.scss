@@ -128,17 +128,17 @@ button {
     }
 }
 
-textarea {
-    $col-main: #212121;
-    $col-scroll: lighten($col-main, 30%);
+$col-textarea: #212121;
+$col-textarea-scroll: lighten($col-textarea, 30%);
 
+textarea {
     font-family: "IBM Plex Mono", monospace;
     font-weight: 400;
     font-style: normal;
 
     background-color: black;
     background-image:
-        radial-gradient($col-main 30%, transparent 30%);
+        radial-gradient($col-textarea 30%, transparent 30%);
     background-size: 4px 4px;
     box-shadow: inset 0px 0px 20px 0px black,
         0px 1px 1px 1px rgba(0, 0, 0, 0.3);
@@ -169,15 +169,15 @@ textarea {
 
     &::-webkit-scrollbar-thumb {
         border-radius: 20px;
-        background-color: $col-scroll;
+        background-color: $col-textarea-scroll;
     }
 
     &::-webkit-scrollbar-thumb:hover {
-        background-color: lighten($col-scroll, 15%);
+        background-color: lighten($col-textarea-scroll, 15%);
     }
 
     &::-webkit-scrollbar-thumb:active {
-        background-color: darken($col-scroll, 15%);
+        background-color: darken($col-textarea-scroll, 15%);
     }
 
     outline: 1px dashed transparent;
@@ -393,6 +393,94 @@ textarea {
             border-right-width: $bracket-thickness;
             border-bottom-width: $bracket-thickness;
             // border-color: rgba(255, 192, 203, 0.45);
+        }
+    }
+}
+
+.asm-viewer {
+    $col-select: rgba(255, 255, 255, 0.1);
+
+    width: 300px;
+    padding: 4px;
+    border-radius: 4px;
+
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: rgb(42, 42, 42);
+    box-shadow: inset 0px 0px 14px 0px black,
+        0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+    border: 1px solid transparent;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 15px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: $col-textarea-scroll;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: lighten($col-textarea-scroll, 15%);
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        background-color: darken($col-textarea-scroll, 15%);
+    }
+
+    outline: 1px dashed transparent;
+    outline-offset: -2px;
+
+    transition: outline 0.3s;
+
+    &:focus {
+        outline: 1px dashed $col-focusing;
+    }
+
+    button {
+        width: 100%;
+
+        padding: 0px;
+        margin: 0px;
+        border: none;
+        outline: none;
+        background: none;
+        background-color: transparent;
+        border-radius: 4px;
+        box-shadow: 0px 0px 0px 0px transparent;
+
+        transition: background-color 0.1s;
+        display: block;
+        justify-content: auto;
+        align-items: auto;
+        text-align: initial;
+
+        &:hover {
+            background-color: $col-select;
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: 0px 0px 0px 0px transparent;
+        }
+
+        &:focus {
+            outline: 1px dashed $col-focusing;
         }
     }
 }
