@@ -1,5 +1,6 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import styles from "./index/index.css?url";
+import destyles from "./index/destyle.css?url";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,6 +11,7 @@ export const meta: MetaFunction = () => {
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
+  { rel: "stylesheet", href: destyles },
 ];
 
 export default function Index() {
