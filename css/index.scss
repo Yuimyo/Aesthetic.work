@@ -104,6 +104,7 @@ button {
     font-size: 1rem;
 
     background-color: $col-btn;
+    background: linear-gradient(150deg, lighten($col-btn, 3%), darken($col-btn, 3%));
     color: white;
     box-shadow: 0px calc(1px + $range-push) $shadow-len $shadow-len $col-shadow;
 
