@@ -15,7 +15,7 @@ export default function AssemblyCodeInput({ onChange, placeholder }: AssemblyCod
 
     return (
         <div>
-            <textarea className={styles.asm_form} onChange={handleChange} id="code-input" placeholder={placeholder} spellCheck="false"></textarea>
+            <textarea className={styles.asm_form} onChange={handleChange} placeholder={placeholder} spellCheck="false"></textarea>
         </div>
     );
 }
