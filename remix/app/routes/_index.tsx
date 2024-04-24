@@ -18,12 +18,12 @@ export default function Index() {
     <div>
       <div className={styles.window}>
         <div className={styles.expo_dark}>
-          <Button></Button>
-          <AssemblyCodeInput></AssemblyCodeInput>
-          <StackItem description={"text"} lore={"13"}></StackItem>
-          <StackItem description={"aataateatea-^p12p@"} lore={"5"}></StackItem>
-          <AssemblyCodeSelector></AssemblyCodeSelector>
-          <BracketEnd></BracketEnd>
+          <Button>永いエラーと奮闘と奮闘の末</Button>
+          <AssemblyCodeInput />
+          <StackItem width={100} height={70} description={"text"} lore={"13"} />
+          <StackItem width={100} height={70} description={"aataateatea-^p12p@"} lore={"5"} />
+          <AssemblyCodeSelector defaultValue={0} data={["sub rax, 8", "mov 2, rax"]}></AssemblyCodeSelector>
+          <BracketEnd width={50} height={50} thickness={4} />
         </div>
       </div>
     </div>
