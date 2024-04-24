@@ -1,6 +1,12 @@
 import styles from "./BracketEnd.module.css";
 
-export default function BracketEnd() {
+interface BracketEndProps {
+    width: number;
+    height: number;
+    thickness: number;
+}
+
+export default function BracketEnd({ width, height, thickness }: BracketEndProps) {
     return (
         <div>
             <div className={styles.bracket}>
