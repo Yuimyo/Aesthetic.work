@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,14 +22,18 @@
 
 .container {
   width: 600px;
-  height: 600px;
-  box-shadow: 0px 0px;
+  padding: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
-  background-color: #212121;
 }
 
 label {
@@ -349,6 +354,118 @@ textarea:focus {
 }
 .asm-viewer button:focus {
   outline: 1px dashed rgba(100, 169, 190, 0.75);
+}
+
+.dummy-stk {
+  border-radius: 4px;
+  margin: 2px;
+  width: 100px;
+  height: 80px;
+  position: relative;
+  background-color: rgb(149, 141, 193);
+}
+
+.container-stk {
+  width: 300px;
+  position: relative;
+}
+.container-stk .container-stk-head {
+  width: 300px;
+  height: 40px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  top: 0px;
+  z-index: 10;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 25, 0.25);
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  position: relative;
+}
+.container-stk .container-stk-head .pos-left,
+.container-stk .container-stk-head .pos-mid,
+.container-stk .container-stk-head .pos-right {
+  display: flex;
+  align-items: center;
+}
+.container-stk .container-stk-head .pos-left {
+  justify-content: start;
+  padding-left: 12px;
+  position: relative;
+}
+.container-stk .container-stk-head .pos-left .stk-linerow {
+  font-size: 15px;
+  position: absolute;
+  left: 3px;
+  bottom: 0px;
+  transform: translateY(100%);
+  color: gray;
+}
+.container-stk .container-stk-head .pos-left .stk-linerow::after {
+  content: "行目";
+  font-size: 8px;
+  white-space: nowrap;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  transform: translateX(calc(100% + 1px)) translateY(-50%);
+  color: gray;
+}
+.container-stk .container-stk-head .pos-mid {
+  justify-content: center;
+  white-space: nowrap;
+}
+.container-stk .container-stk-head .pos-mid .container-stk-title {
+  font-size: 18px;
+}
+.container-stk .container-stk-head .pos-right {
+  justify-content: end;
+}
+.container-stk .container-stk-main {
+  overflow-y: scroll;
+  height: calc(500px - 40px);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  display: grid;
+  place-items: center;
+  place-content: start space-evenly;
+  background: #191919;
+}
+.container-stk .container-stk-main .container-stk-draw {
+  margin: 4px 0px 40px 0px;
+}
+.container-stk .container-stk-main::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+.container-stk .container-stk-main::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background-color: transparent;
+}
+.container-stk .container-stk-main::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+.container-stk .container-stk-main::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #6e6e6e;
+}
+.container-stk .container-stk-main::-webkit-scrollbar-thumb:hover {
+  background-color: #949494;
+}
+.container-stk .container-stk-main::-webkit-scrollbar-thumb:active {
+  background-color: #474747;
+}
+.container-stk .container-stk-below {
+  width: 300px;
+  position: absolute;
+}
+.container-stk .container-stk-below .container-stk-fading {
+  width: calc(300px - max(4px, 8px) * 2);
+  height: 40px;
+  position: absolute;
+  background-image: linear-gradient(0deg, #191919, rgba(255, 255, 255, 0));
+  left: max(4px, 8px);
+  bottom: 0px;
 }
 
 /*# sourceMappingURL=index.css.map */
