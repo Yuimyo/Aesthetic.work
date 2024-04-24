@@ -1,6 +1,6 @@
 import styles from "./BracketEnd.module.css";
 
-export default function AssemblyCodeSelector() {
+export default function BracketEnd() {
     return (
         <div>
             <div className={styles.bracket}>
