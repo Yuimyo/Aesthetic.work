@@ -1,7 +1,14 @@
 import styles from "./StackItem.module.css";
 import BracketEnd from "~/components/dark/BracketEnd";
 
-export default function StackItem({ description, lore }: { description: string, lore: string }) {
+interface StackItemProps {
+    description: string;
+    lore: string;
+    width: number;
+    height: number;
+}
+
+export default function StackItem({ description, lore, width, height }: StackItemProps) {
     return (
         <div>
             <div className={styles.stk}>
@@ -10,7 +17,7 @@ export default function StackItem({ description, lore }: { description: string, 
                         {description}</div>
                 </div>
                 <div className={styles.stk_outside}>
-                    <BracketEnd></BracketEnd>
+                    <BracketEnd width={width} height={height} thickness={2}></BracketEnd>
                     <div className={styles.stk_lore}>
                         {lore}
                     </div>
