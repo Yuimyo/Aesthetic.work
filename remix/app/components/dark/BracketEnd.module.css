@@ -1,0 +1,73 @@
+.bracket {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bracket .bracket_above {
+  position: relative;
+  width: calc(20px - 4px * 2);
+  height: calc(calc(40px - 4px * 2) * 0.5);
+  margin-top: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.bracket .bracket_above::before, .bracket .bracket_above::after {
+  content: "";
+  width: calc(calc(20px - 4px * 2) * 0.5 - 2px * 0.5);
+  height: calc(calc(40px - 4px * 2) * 0.25 - 2px * 0.75);
+  position: absolute;
+  border-radius: 0px;
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+}
+.bracket .bracket_above::before {
+  top: 0px;
+  left: 0px;
+  border-top-right-radius: 20px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+.bracket .bracket_above::after {
+  right: 0px;
+  bottom: calc(2px * -0.5);
+  border-bottom-left-radius: 20px;
+  border-left-width: 2px;
+  border-bottom-width: 2px;
+}
+.bracket .bracket_below {
+  position: relative;
+  width: calc(20px - 4px * 2);
+  height: calc(calc(40px - 4px * 2) * 0.5);
+  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.bracket .bracket_below::before, .bracket .bracket_below::after {
+  content: "";
+  width: calc(calc(20px - 4px * 2) * 0.5 - 2px * 0.5);
+  height: calc(calc(40px - 4px * 2) * 0.25 - 2px * 0.75);
+  position: absolute;
+  border-radius: 0px;
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+}
+.bracket .bracket_below::before {
+  top: calc(2px * -0.5);
+  right: 0px;
+  border-top-left-radius: 20px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+.bracket .bracket_below::after {
+  bottom: 0px;
+  left: 0px;
+  border-bottom-right-radius: 20px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+}
+
+/*# sourceMappingURL=BracketEnd.module.css.map */

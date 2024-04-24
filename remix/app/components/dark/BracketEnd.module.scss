@@ -1,0 +1,99 @@
+.bracket {
+    $bracket-width: 20px;
+    $bracket-height: 40px;
+    $bracket-thickness: 2px;
+    $bracket-padding: 4px;
+    $bracket-color: rgb(200, 200, 200);
+
+    // background-color: darkblue; // test
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    $actual-bracket-width: calc(#{$bracket-width} - #{$bracket-padding} * 2);
+    $actual-bracket-height: calc(#{$bracket-height} - #{$bracket-padding} * 2);
+
+    .bracket_above {
+        position: relative;
+        width: $actual-bracket-width;
+        height: calc(#{$actual-bracket-height} * 0.5);
+        margin-top: $bracket-padding;
+        margin-left: $bracket-padding;
+        margin-right: $bracket-padding;
+
+        &::before,
+        &::after {
+            content: "";
+            width: calc(#{$actual-bracket-width} * 0.5 - #{$bracket-thickness} * 0.5);
+            height: calc(#{$actual-bracket-height} * 0.25 - #{$bracket-thickness} * 0.75);
+
+            position: absolute;
+
+            border-radius: 0px;
+            border-width: 0px;
+            border-style: solid;
+            border-color: $bracket-color;
+        }
+
+        &::before {
+            top: 0px;
+            left: 0px;
+            border-top-right-radius: 20px;
+            border-top-width: $bracket-thickness;
+            border-right-width: $bracket-thickness;
+            // border-color: rgba(192, 255, 242, 0.299);
+        }
+
+        &::after {
+            right: 0px;
+            bottom: calc(#{$bracket-thickness} * -0.5);
+            border-bottom-left-radius: 20px;
+            border-left-width: $bracket-thickness;
+            border-bottom-width: $bracket-thickness;
+            // border-color: rgba(255, 192, 203, 0.45);
+        }
+    }
+
+    .bracket_below {
+        position: relative;
+        width: $actual-bracket-width;
+        height: calc(#{$actual-bracket-height} * 0.5);
+        margin-bottom: $bracket-padding;
+        margin-left: $bracket-padding;
+        margin-right: $bracket-padding;
+
+        &::before,
+        &::after {
+            content: "";
+            width: calc(#{$actual-bracket-width} * 0.5 - #{$bracket-thickness} * 0.5);
+            height: calc(#{$actual-bracket-height} * 0.25 - #{$bracket-thickness} * 0.75);
+
+            position: absolute;
+
+            border-radius: 0px;
+            border-width: 0px;
+            border-style: solid;
+            border-color: $bracket-color;
+        }
+
+        &::before {
+            top: calc(#{$bracket-thickness} * -0.5);
+            right: 0px;
+            border-top-left-radius: 20px;
+            border-top-width: $bracket-thickness;
+            border-left-width: $bracket-thickness;
+            // border-color: rgba(192, 255, 242, 0.299);
+        }
+
+        &::after {
+            bottom: 0px;
+            left: 0px;
+            border-bottom-right-radius: 20px;
+            border-right-width: $bracket-thickness;
+            border-bottom-width: $bracket-thickness;
+            // border-color: rgba(255, 192, 203, 0.45);
+        }
+    }
+}

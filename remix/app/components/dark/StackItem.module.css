@@ -1,0 +1,66 @@
+.stk {
+  border-radius: 4px;
+  margin: 2px;
+  width: 100px;
+  height: 40px;
+  position: relative;
+  background-color: rgb(141, 193, 170);
+}
+.stk .stk_inside {
+  height: 100%;
+  padding: 0px 4px 0px 4px;
+  font-size: 14px;
+  border-radius: 4px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  text-align: center;
+  background-color: rgb(141, 193, 170);
+}
+.stk .stk_inside .stk_description {
+  font-size: 1em;
+  white-space: nowrap;
+  display: inline-block;
+  transform: translateY(calc(40px * 0.5 - 1em + 8px * 0.5));
+  color: white;
+  text-shadow: 0px 0px 4px black, 0px 0px 2px black, 1px 1px 1px black;
+}
+.stk .stk_inside::-webkit-scrollbar {
+  width: 0px;
+  height: 8px;
+}
+.stk .stk_inside::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background-color: transparent;
+}
+.stk .stk_inside::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgb(141, 193, 170);
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(141, 193, 170);
+  background-color: #cfe5db;
+}
+.stk .stk_inside::-webkit-scrollbar-thumb:hover {
+  background-color: #529678;
+}
+.stk .stk_inside::-webkit-scrollbar-thumb:active {
+  background-color: #1c3329;
+}
+.stk .stk_outside {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+  transform: translateX(100%);
+}
+.stk .stk_outside .stk_lore {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+}
+
+/*# sourceMappingURL=StackItem.module.css.map */
