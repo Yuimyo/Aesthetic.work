@@ -3,9 +3,10 @@ import styles from "./AssemblyCodeInput.module.css";
 
 interface AssemblyCodeInputProps {
     onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+    placeholder?: string;
 }
 
-export default function AssemblyCodeInput({ onChange }: AssemblyCodeInputProps) {
+export default function AssemblyCodeInput({ onChange, placeholder }: AssemblyCodeInputProps) {
     const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         if (onChange) {
             onChange(e);
@@ -14,7 +15,7 @@ export default function AssemblyCodeInput({ onChange }: AssemblyCodeInputProps) 
 
     return (
         <div>
-            <textarea className={styles.asm_form} onChange={handleChange} id="code-input" placeholder="addq $0x2A %rax" spellCheck="false"></textarea>
+            <textarea className={styles.asm_form} onChange={handleChange} id="code-input" placeholder={placeholder} spellCheck="false"></textarea>
         </div>
     );
 }
