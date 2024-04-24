@@ -1,0 +1,43 @@
+$col-focusing: rgba(100, 169, 190, 0.75);
+
+.btn {
+    font-size: 12px;
+
+    $col-btn: #212121;
+    $col-shadow: rgba(0, 0, 0, 0.3);
+    $text-padding: 10px;
+    $range-push: 2px;
+    $shadow-len: 2px;
+
+    cursor: pointer;
+    padding: $text-padding;
+    border-radius: 10px;
+    border: 0px solid transparent;
+    margin: $range-push 0px $range-push 0px;
+
+    font-size: 1rem;
+
+    background-color: $col-btn;
+    background: linear-gradient(150deg, lighten($col-btn, 3%), darken($col-btn, 3%));
+    color: white;
+    box-shadow: 0px calc(1px + $range-push) $shadow-len $shadow-len $col-shadow;
+
+    outline: 1px dashed transparent;
+    outline-offset: -2px;
+
+    transition: background-color 0.05s,
+        outline 0.3s;
+
+    &:hover {
+        background-color: lighten($col-btn, 5%);
+    }
+
+    &:active {
+        transform: translateY($range-push);
+        box-shadow: 0px 1px $shadow-len $shadow-len $col-shadow;
+    }
+
+    &:focus {
+        outline: 1px dashed $col-focusing;
+    }
+}

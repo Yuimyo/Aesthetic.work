@@ -4,8 +4,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  LiveReload,
 } from "@remix-run/react";
+import destyles from "~/destyle.css?url";
+
+import type { LinksFunction } from "@remix-run/node";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: destyles },
+];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -20,7 +26,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
